@@ -37,6 +37,7 @@ typedef void (^VWWBoolDictionaryBlock)(BOOL success, NSDictionary *dictionary);
     // Do any additional setup after loading the view.
     NSString *picturesPath = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Pictures"];
     self.pathControl.URL = [NSURL fileURLWithPath:picturesPath];
+//    [FileSystemItem rootItemWithPath:self.pathControl.URL.path];
 //    [self seachForFilesInDirectory:picturesPath];
     
 
@@ -57,26 +58,34 @@ typedef void (^VWWBoolDictionaryBlock)(BOOL success, NSDictionary *dictionary);
 
 // Data Source methods
 
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(FileSystemItem*)item {
     return (item == nil) ? 1 : [item numberOfChildren];
 }
 
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(FileSystemItem*)item {
     return (item == nil) ? YES : ([item numberOfChildren] != -1);
 }
 
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
-    return (item == nil) ? [FileSystemItem rootItem] : [(FileSystemItem *)item childAtIndex:index];
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(FileSystemItem*)item {
+//    return (item == nil) ? [FileSystemItem rootItem] : [(FileSystemItem *)item childAtIndex:index];
+    return (item == nil) ? [FileSystemItem rootItemWithPath:self.pathControl.URL.path] : [(FileSystemItem *)item childAtIndex:index];
 }
 
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
-    return (item == nil) ? @"/" : (id)[item relativePath];
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(FileSystemItem*)item {
+    if([tableColumn.identifier isEqualToString:@"tree"]){
+        return (item == nil) ? @"/" : (id)[item relativePath];
+//        return (item == nil) ? @"Pictures" : (id)[item relativePath];
+    } else if([tableColumn.identifier isEqualToString:@"coordinate"]){
+        return @"coordinate";
+    }
+
+    return nil;
 //    return (item == nil) ? self.pathControl.URL.path : (id)[item relativePath];
 }
 
 // Delegate methods
 
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(FileSystemItem*)item {
     return NO;
 }
 

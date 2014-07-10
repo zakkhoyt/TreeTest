@@ -49,6 +49,9 @@
 
 #import "FileSystemItem.h"
 
+@interface FileSystemItem ()
+@property (strong) NSString *rootPath;
+@end
 
 @implementation FileSystemItem
 
@@ -58,6 +61,7 @@ static FileSystemItem *rootItem = nil;
 
 - (id)initWithPath:(NSString *)path parent:(FileSystemItem *)obj {
     if (self = [super init]) {
+        _rootPath = path;
         relativePath = [[path lastPathComponent] copy];
         parent = obj;
     }
@@ -67,6 +71,12 @@ static FileSystemItem *rootItem = nil;
 + (FileSystemItem *)rootItem {
    if (rootItem == nil) rootItem = [[FileSystemItem alloc] initWithPath:@"/" parent:nil];
    return rootItem;       
+}
+
++ (FileSystemItem *)rootItemWithPath:(NSString*)path {
+
+    if (rootItem == nil) rootItem = [[FileSystemItem alloc] initWithPath:path parent:nil];
+    return rootItem;
 }
 
 - (NSArray *)children {
@@ -99,7 +109,8 @@ static FileSystemItem *rootItem = nil;
 }
 
 - (NSString *)fullPath {
-    return parent ? [[parent fullPath] stringByAppendingPathComponent:relativePath] : relativePath;
+//    return parent ? [[parent fullPath] stringByAppendingPathComponent:relativePath] : relativePath;
+    return parent ? [[parent fullPath] stringByAppendingPathComponent:relativePath] : self.rootPath;
 }
 
 - (FileSystemItem *)childAtIndex:(NSInteger)n {
