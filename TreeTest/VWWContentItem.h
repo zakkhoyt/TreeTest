@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSMutableDictionary *metaData;
 
 @property (strong) NSMutableArray *children;
+@property (strong) NSMutableDictionary *dictionaries;
 
 @end
