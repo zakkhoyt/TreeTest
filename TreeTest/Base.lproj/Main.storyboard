@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="14A283o" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A298i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment defaultVersion="101000" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6185.7"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -647,7 +646,7 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -677,18 +676,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaE-lU-clW">
+                            <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9v-pq-uPi">
+                                <rect key="frame" x="20" y="265" width="410" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="dTO-1U-8j5"/>
+                                </constraints>
+                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="go4-yt-lHl">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <url key="url" string="file://localhost/Applications/"/>
+                                </pathCell>
+                                <connections>
+                                    <action selector="pathControlAction:" target="XfG-lQ-9wD" id="phC-px-0IU"/>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="YgG-eU-C5Q"/>
+                                </connections>
+                            </pathControl>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="FaE-lU-clW">
                                 <rect key="frame" x="20" y="20" width="410" height="232"/>
                                 <clipView key="contentView" id="yBw-1R-GgR">
                                     <rect key="frame" x="1" y="17" width="238" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="RND-WY-0Dk" indentationPerLevel="16" outlineTableColumn="UcQ-J5-eOn" id="IRm-Db-dGq">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="RND-WY-0Dk" indentationPerLevel="16" outlineTableColumn="UcQ-J5-eOn" id="IRm-Db-dGq" customClass="JPOutliveView">
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="gridColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn identifier="tree" width="300" minWidth="40" maxWidth="1000" id="UcQ-J5-eOn">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
@@ -723,7 +736,7 @@
                                             </connections>
                                         </outlineView>
                                     </subviews>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="5UO-CT-mvY">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
@@ -738,21 +751,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9v-pq-uPi">
-                                <rect key="frame" x="20" y="265" width="410" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="dTO-1U-8j5"/>
-                                </constraints>
-                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="go4-yt-lHl">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <url key="url" string="file://localhost/Applications/"/>
-                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </pathCell>
-                                <connections>
-                                    <action selector="pathControlAction:" target="XfG-lQ-9wD" id="phC-px-0IU"/>
-                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="YgG-eU-C5Q"/>
-                                </connections>
-                            </pathControl>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="FaE-lU-clW" secondAttribute="bottom" constant="20" symbolic="YES" id="3zo-Kd-FQF"/>

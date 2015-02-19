@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D40036F1A95903500BB01C3 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D40036D1A95903500BB01C3 /* folder.png */; };
-		5D4003701A95903500BB01C3 /* folderOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D40036E1A95903500BB01C3 /* folderOpen.png */; };
-		5D4003731A95A12000BB01C3 /* JPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4003721A95A12000BB01C3 /* JPLabel.m */; };
-		5D4003761A95A3F500BB01C3 /* NSColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4003751A95A3F500BB01C3 /* NSColor+Extension.m */; };
 		C608543F196E03E800A05614 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C608543E196E03E800A05614 /* main.m */; };
 		C6085442196E03E800A05614 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6085441196E03E800A05614 /* ViewController.m */; };
 		C6085445196E03E800A05614 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6085444196E03E800A05614 /* AppDelegate.m */; };
@@ -32,12 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D40036D1A95903500BB01C3 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
-		5D40036E1A95903500BB01C3 /* folderOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folderOpen.png; sourceTree = "<group>"; };
-		5D4003711A95A12000BB01C3 /* JPLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLabel.h; sourceTree = "<group>"; };
-		5D4003721A95A12000BB01C3 /* JPLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLabel.m; sourceTree = "<group>"; };
-		5D4003741A95A3F500BB01C3 /* NSColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Extension.h"; sourceTree = "<group>"; };
-		5D4003751A95A3F500BB01C3 /* NSColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Extension.m"; sourceTree = "<group>"; };
 		C6085439196E03E800A05614 /* TreeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C608543D196E03E800A05614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C608543E196E03E800A05614 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,15 +64,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D40036C1A95903500BB01C3 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				5D40036D1A95903500BB01C3 /* folder.png */,
-				5D40036E1A95903500BB01C3 /* folderOpen.png */,
-			);
-			path = images;
-			sourceTree = SOURCE_ROOT;
-		};
 		C6085430196E03E800A05614 = {
 			isa = PBXGroup;
 			children = (
@@ -104,15 +85,10 @@
 		C608543B196E03E800A05614 /* TreeTest */ = {
 			isa = PBXGroup;
 			children = (
-				5D40036C1A95903500BB01C3 /* images */,
 				C6085464196E0B8100A05614 /* FileSystemItem.h */,
 				C6085465196E0B8100A05614 /* FileSystemItem.m */,
 				C608545F196E06B200A05614 /* VWWContentItem.h */,
 				C6085460196E06B200A05614 /* VWWContentItem.m */,
-				5D4003741A95A3F500BB01C3 /* NSColor+Extension.h */,
-				5D4003751A95A3F500BB01C3 /* NSColor+Extension.m */,
-				5D4003711A95A12000BB01C3 /* JPLabel.h */,
-				5D4003721A95A12000BB01C3 /* JPLabel.m */,
 				C6085440196E03E800A05614 /* ViewController.h */,
 				C6085441196E03E800A05614 /* ViewController.m */,
 				C6085443196E03E800A05614 /* AppDelegate.h */,
@@ -232,8 +208,6 @@
 			files = (
 				C6085447196E03E800A05614 /* Images.xcassets in Resources */,
 				C608544A196E03E800A05614 /* Main.storyboard in Resources */,
-				5D40036F1A95903500BB01C3 /* folder.png in Resources */,
-				5D4003701A95903500BB01C3 /* folderOpen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4003761A95A3F500BB01C3 /* NSColor+Extension.m in Sources */,
 				C6085442196E03E800A05614 /* ViewController.m in Sources */,
 				C6085461196E06B200A05614 /* VWWContentItem.m in Sources */,
-				5D4003731A95A12000BB01C3 /* JPLabel.m in Sources */,
 				C608543F196E03E800A05614 /* main.m in Sources */,
 				C6085445196E03E800A05614 /* AppDelegate.m in Sources */,
 				C6085467196E0B8100A05614 /* FileSystemItem.m in Sources */,
@@ -444,7 +416,6 @@
 				C608545B196E03E800A05614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		C608545C196E03E800A05614 /* Build configuration list for PBXNativeTarget "TreeTestTests" */ = {
 			isa = XCConfigurationList;
@@ -453,7 +424,6 @@
 				C608545E196E03E800A05614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

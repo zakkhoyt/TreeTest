@@ -7,8 +7,9 @@
 //
 
 #import "VWWContentItem.h"
+//#import < >
 
-
+#include <ImageIO/CGImageProperties.h>
 
 @implementation VWWContentItem
 
@@ -59,18 +60,18 @@
     @synchronized(self){
         _metaData = metaData;
         [self.dictionaries removeAllObjects];
-        self.tiffDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyTIFFDictionary];
-        self.gifDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyGIFDictionary];
-        self.exifDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyExifDictionary];
-        self.exifAuxDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyExifAuxDictionary];
-        self.pngDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyPNGDictionary];
-        self.iptcDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyIPTCDictionary];
-        self.gpsDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyGPSDictionary];
-        self.rawDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyRawDictionary];
-        self.ciffDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyCIFFDictionary];
-        self.bbimDictionary = [self ensureDictionaryForKey:(NSString*)kCGImageProperty8BIMDictionary];
-        self.dngDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyDNGDictionary];
-        
+//        self.tiffDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyTIFFDictionary];
+//        self.gifDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyGIFDictionary];
+//        self.exifDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyExifDictionary];
+//        self.exifAuxDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyExifAuxDictionary];
+//        self.pngDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyPNGDictionary];
+//        self.iptcDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyIPTCDictionary];
+//        self.gpsDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyGPSDictionary];
+//        self.rawDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyRawDictionary];
+//        self.ciffDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyCIFFDictionary];
+//        self.bbimDictionary = [self ensureDictionaryForKey:(NSString*)kCGImageProperty8BIMDictionary];
+//        self.dngDictionary = [self ensureDictionaryForKey:(NSString*)kCGImagePropertyDNGDictionary];
+//        
         
 //        [self.dictionaries addObject:self.tiffDictionary];
 //        [self.dictionaries addObject:self.gifDictionary];
@@ -113,6 +114,6 @@
 }
 
 -(void)setAnnotationCoordinate:(CLLocationCoordinate2D)coordinate{
-    _coordinate = coordinate;
+    //_coordinate = coordinate;
 }
 @end
